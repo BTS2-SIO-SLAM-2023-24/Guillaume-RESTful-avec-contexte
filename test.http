@@ -1,7 +1,20 @@
-POST http://localhost:3000/employes
+
+// POST http://localhost:3000/employes
+// Content-Type: application/json
+
+//{
+//"nom": "Coltrane",
+//"prenom": "John"
+//}
+
+
+POST http://localhost:3000/animal
 Content-Type: application/json
 
 {
-  "nom": "Coltrane",
-  "prenom": "John"
+  "nom": "Maurice",
+  "age": 5,
+  "race": "Labrador"
 }
+
+

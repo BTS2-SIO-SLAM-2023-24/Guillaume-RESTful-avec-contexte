@@ -10,5 +10,10 @@ router.get('/:employeId', EmployeController.readEmploye);
 router.put('/:employeId', EmployeController.updateEmploye);
 router.delete('/:employeId', EmployeController.deleteEmploye);
 
+
+// la parti animal
+
+router.post('')
+
 export default router;// Export du routeur pour être utilisé dans l'application principale
 

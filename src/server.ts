@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import { config } from './config/config';  //les accolades {} sont utilisées pour spécifier les éléments particuliers
 import Logging from './library/Logging';
 import employeRoutes from './routes/employeRoutes';
+import animalRoutes from "./routes/animalRoutes";
 
 
 // Création d'une instance d'Express
@@ -55,6 +56,7 @@ router.use((req, res, next) => {
 // Définition des routes de l'API
     // Route :
     router.use('/employes', employeRoutes);
+    router.use('/animal', animalRoutes)
 
 // Healthcheck - une route simple pour vérifier que le serveur fonctionne
 router.get('/ping', (req, res, next) => res.status(200).json({ hello: 'world' }));
