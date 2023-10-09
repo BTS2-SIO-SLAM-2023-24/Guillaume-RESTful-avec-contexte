@@ -9,4 +9,7 @@ router.get("/:animalId", AnimalController.readAnimal);
 router.put("/:animalId", AnimalController.updateAnimal);
 router.delete("/:animalId", AnimalController.deleteAnimal);
 
+
+
+
 export default router;

@@ -9,11 +9,7 @@ router.get('/', EmployeController.readAllEmploye);
 router.get('/:employeId', EmployeController.readEmploye);
 router.put('/:employeId', EmployeController.updateEmploye);
 router.delete('/:employeId', EmployeController.deleteEmploye);
-
-
-// la parti animal
-
-router.post('')
+router.get('/:employeId/age', EmployeController.calculerAge);
 
 export default router;// Export du routeur pour être utilisé dans l'application principale
 
