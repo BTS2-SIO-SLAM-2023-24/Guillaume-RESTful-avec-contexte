@@ -40,7 +40,29 @@ export const Schemas = {
             nom: Joi.string().required(),
             prenom: Joi.string().required()
         })
+    },
+
+    animal: {
+        create: Joi.object({
+            nom: Joi.string().required(),
+            espece: Joi.string().required()
+        }),
+        update: Joi.object({
+            nom: Joi.string(),
+            espece: Joi.string()
+        })
+    },
+
+
+    Espece: {
+        create: Joi.object({
+            nom: Joi.string().required()
+        }),
+        update: Joi.object({
+            nom: Joi.string()
+        })
     }
+
 };
 
 // Importation des modules nécessaires

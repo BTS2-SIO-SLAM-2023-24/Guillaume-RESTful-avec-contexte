@@ -8,27 +8,15 @@
 //}
 
 
-//POST http://localhost:3000/animal
-//Content-Type: application/json
+POST http://localhost:3000/animals
+Content-Type: application/json
 
-//{
-  //"nom": "Maurice",
-  //"age": 5,
-  //"race": "Labrador"
-//}
+{
+  "nom": "Michel",
+  "espece": "652517932794cb7e1df4b029",
+  "employes": []
 
-//POST http://localhost:3000/employes
-//Content-Type: application/json
+}
 
-//{
-  //"nom": "John",
-  //"prenom": "Doe",
- // "dateNaissance": "1990-01-15"
 
-//}
 
-//GET http://localhost:3000/employes/652400c2c4ea8387e70b07e2/age
-
-//DELETE localhost:3000/animal/65240473c4ea8387e70b07f8
-
-GET http://localhost:3000/employes

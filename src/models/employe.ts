@@ -1,18 +1,21 @@
-import mongoose, { Document,Schema} from "mongoose";
-// Modèle pour l'employé
-export interface IEmploye {
+import mongoose, { Document, Schema, Types } from "mongoose";
+
+export interface IEmploye extends Document {
     nom: string;
     prenom: string;
     dateNaissance: Date;
-    calculerAge():number; //méthode calculer l'âge
+    calculerAge(): number;
+    affecterAnimal(animalId: Types.ObjectId): void;
+    retirerAnimal(animalId: Types.ObjectId): void;
+    LesAnimaux: Types.ObjectId[];
 }
-export interface IEmployeModel extends IEmploye, Document {}
-// Schéma pour l'employé
+
 const EmployeSchema: Schema = new Schema(
     {
         nom: { type: String, required: true },
         prenom: { type: String, required: true },
-        dateNaissance: { type: Date, required: true},
+        dateNaissance: { type: Date, required: true },
+        LesAnimaux: [{ type: Schema.Types.ObjectId, ref: 'Animal' }] // Champ pour stocker les ObjectIds des animaux associés à l'employé
     },
     {
         timestamps: true,
@@ -30,11 +33,12 @@ EmployeSchema.methods.calculerAge = function(): number {
     return anniversairePasse ? differenceAnnees : differenceAnnees - 1;
 };
 
+EmployeSchema.methods.affecterAnimal = function(animalId: Types.ObjectId): void {
+    this.LesAnimaux.push(animalId);
+};
 
+EmployeSchema.methods.retirerAnimal = function(animalId: Types.ObjectId): void {
+    this.LesAnimaux.pull(animalId);
+};
 
-
-
-
-
-
-export default mongoose.model<IEmployeModel>('Employe', EmployeSchema);
+export default mongoose.model<IEmploye>('Employe', EmployeSchema);

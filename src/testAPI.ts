@@ -1,7 +1,7 @@
-import Employe, { IEmployeModel } from './models/employe';
+import Employe, { IEmploye } from './models/employe';
 
 // Créez un employé avec une date de naissance
-const employe: IEmployeModel = new Employe({
+const employe: IEmploye = new Employe({
     nom: 'John',
     prenom: 'Doe',
     dateNaissance: new Date('1990-05-15') // Date de naissance de l'employé

@@ -5,6 +5,8 @@ import { config } from './config/config';  //les accolades {} sont utilisées po
 import Logging from './library/Logging';
 import employeRoutes from './routes/employeRoutes';
 import animalRoutes from "./routes/animalRoutes";
+import especeRoutes from './routes/especeRoutes';
+
 
 
 // Création d'une instance d'Express
@@ -56,7 +58,11 @@ router.use((req, res, next) => {
 // Définition des routes de l'API
     // Route :
     router.use('/employes', employeRoutes);
-    router.use('/animal', animalRoutes)
+    router.use('/animals', animalRoutes)
+    router.use('/especes', especeRoutes);
+
+
+
 
 // Healthcheck - une route simple pour vérifier que le serveur fonctionne
 router.get('/ping', (req, res, next) => res.status(200).json({ hello: 'world' }));
